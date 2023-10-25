@@ -79,11 +79,11 @@
                         <TapGestureRecognizer Tapped="Info_TapGestureRecognizer_Tapped"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="{StaticResource Settings}" FontFamily="MaterialIcons" FontSize="Large" Grid.Row="2" VerticalOptions="Center"  TextColor="{StaticResource PaletteBlue50}" >
+                <!--<Label Text="{StaticResource Settings}" FontFamily="MaterialIcons" FontSize="Large" Grid.Row="2" VerticalOptions="Center"  TextColor="{StaticResource PaletteBlue50}" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Settings_TapGestureRecognizer_Tapped"/>
                     </Label.GestureRecognizers>
-                </Label>
+                </Label>-->
             </StackLayout>
         </Frame>
 
