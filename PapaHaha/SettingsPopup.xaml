@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="PapaHaha.SettingsPage">
+    <VerticalStackLayout Margin="50,50,0,50">
+        <Label FontSize="Large" TextColor="{StaticResource PaletteBlue50}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="{StaticResource Settings}" FontFamily="MaterialIcons" />
+                    <Span Text=" Settings" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+
+        <ScrollView Margin="40,40,0,40">
+            <VerticalStackLayout Spacing="20">
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Automatically load joke on app startup" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Automatically copy current joke to clipboard" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Automatically load new joke every x seconds ( after the joke has finished animating )" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Disable animation for joke text" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Dark Theme" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Remove old man logo" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,auto">
+                    <Label TextColor="{StaticResource PaletteBlue50}" Text="Change old man logo" VerticalOptions="Center"/>
+                    <Switch OnColor="{StaticResource PaletteBlue25}" ThumbColor="{StaticResource PaletteBlue01}" Grid.Column="1"/>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </VerticalStackLayout>
+</ContentPage>

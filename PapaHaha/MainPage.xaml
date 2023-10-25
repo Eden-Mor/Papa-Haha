@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PapaHaha.MainPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStopCollection>
+                <GradientStop Color="{StaticResource PaletteBlue01}" Offset="0.0"/>
+                <GradientStop Color="{StaticResource BackgroundGray}" Offset="1.0"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="300" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Source="old_man_smile.png"-->
+        <Image
+         x:Name="OldManIMG"
+         Grid.Row="1"
+         Scale="1.1"
+         Grid.Column="0"
+         SemanticProperties.Description="Click this to get a random joke read to you"
+         VerticalOptions="End"
+         MaximumHeightRequest="400"
+         HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Image.GestureRecognizers>
+        </Image>
+
+
+        <Frame
+         Grid.Column="1"
+          x:Name="jokeFrame"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          Margin="30" BorderColor="{StaticResource Gray400}"
+          Padding="30">
+
+            <Label
+             x:Name="jokeText"
+             LineBreakMode="WordWrap"
+             HorizontalTextAlignment="Center"
+             FontAttributes="Bold"
+             VerticalTextAlignment="Center"
+             TextColor="{StaticResource PaletteBlue50}"
+             Text="Haha jokes on you"
+             
+             FontFamily="Montserrat"
+             
+             SemanticProperties.HeadingLevel="Level2"
+             SemanticProperties.Description="Haha jokes on you"
+             FontSize="28"
+             HorizontalOptions="Center" />
+        </Frame>
+
+        <Frame BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="Center" Margin="30" x:Name="buttonFrame">
+            <StackLayout Spacing="20" x:Name="buttons">
+                <Label Text="{StaticResource Content_copy}" FontFamily="MaterialIcons" FontSize="Large" VerticalOptions="Center" TextColor="{StaticResource PaletteBlue50}" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Copy_TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="{StaticResource Share}" FontFamily="MaterialIcons" FontSize="Large" Grid.Row="1" VerticalOptions="Center" TextColor="{StaticResource PaletteBlue50}" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Share_TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="{StaticResource Info}" FontFamily="MaterialIcons" FontSize="Large" Grid.Row="2" VerticalOptions="Center"  TextColor="{StaticResource PaletteBlue50}" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Info_TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="{StaticResource Settings}" FontFamily="MaterialIcons" FontSize="Large" Grid.Row="2" VerticalOptions="Center"  TextColor="{StaticResource PaletteBlue50}" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Settings_TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>
