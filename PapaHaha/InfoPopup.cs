@@ -1,11 +1,4 @@
-﻿using ABI.System;
-using CommunityToolkit.Maui.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Versioning;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Maui.Views;
 
 namespace PapaHaha
 {
