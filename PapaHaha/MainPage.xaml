@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
              x:Class="PapaHaha.MainPage">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -14,10 +15,10 @@
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="300" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -29,7 +30,6 @@
          Grid.Column="0"
          SemanticProperties.Description="Click this to get a random joke read to you"
          VerticalOptions="End"
-         MaximumHeightRequest="400"
          HorizontalOptions="Start">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
@@ -53,13 +53,15 @@
              VerticalTextAlignment="Center"
              TextColor="{StaticResource PaletteBlue50}"
              Text="Haha jokes on you"
-             
              FontFamily="Montserrat"
-             
              SemanticProperties.HeadingLevel="Level2"
              SemanticProperties.Description="Haha jokes on you"
              FontSize="28"
              HorizontalOptions="Center" />
+            
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Frame.GestureRecognizers>
         </Frame>
 
         <Frame BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="Center" Margin="30" x:Name="buttonFrame">

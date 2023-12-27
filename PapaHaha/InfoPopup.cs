@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui.Views;
+using Microsoft.Maui.Controls.Shapes;
 
 namespace PapaHaha
 {
@@ -19,12 +20,24 @@ namespace PapaHaha
             Application.Current.Resources.TryGetValue("PaletteBlue99", out var PaletteBlue99);
 
             this.Color = Colors.Transparent;
-            Frame vsl = new()
+
+            Border border = new()
             {
-                BorderColor = (Color)PaletteBlue99,
-                Content =
-                    new Label()
+                StrokeThickness = 1,
+                Padding = 20,
+                Margin = 10,
+                Stroke = Colors.Black,
+                BackgroundColor = Colors.White,
+                StrokeShape = new RoundRectangle() { CornerRadius = 20 }
+            };
+
+            var slo = new StackLayout()
+            {
+                Children =
                     {
+                        new Label()
+                        {
+                        TextColor = Colors.Black,
                         FormattedText = new FormattedString()
                         {
                             Spans =
@@ -65,9 +78,13 @@ namespace PapaHaha
                             }
                         }
                     }
+                    }
             };
 
-            this.Content = vsl;
+
+            border.Content = slo;
+
+            this.Content = border;
         }
     }
 }

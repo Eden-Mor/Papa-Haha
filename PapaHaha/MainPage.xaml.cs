@@ -22,12 +22,24 @@ namespace PapaHaha
         {
             InitializeComponent();
 
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+
+            var proportionedSize = (Math.Min(mainDisplayInfo.Width, mainDisplayInfo.Height) / mainDisplayInfo.Density) * 0.4;
+            var maxSize = 300;
+
+            OldManIMG.MaximumHeightRequest = proportionedSize > maxSize ? maxSize : proportionedSize;
+
+#if WINDOWS
             SizeChanged += MainPage_SizeChanged;
+#else
+            DeviceDisplay.MainDisplayInfoChanged += MainPage_SizeChanged;
+#endif
             SetLandscapePortrait();
 
             var test = Uri.TryCreate("old_man_smile.png", UriKind.Absolute, out Uri uri) && uri.Scheme != "file" ? ImageSource.FromUri(uri) : ImageSource.FromFile("old_man_smile.png");
             OldManIMG.Source = ImageSource.FromFile("old_man_smile.png");
         }
+
 
         private void MainPage_SizeChanged(object sender, EventArgs e) => SetLandscapePortrait();
 
@@ -83,9 +95,8 @@ namespace PapaHaha
 
             lastTapTime = currentTime;
 
-            var img = sender as Image;
-            await img.ScaleTo(1, 250, Easing.Linear);
-            await img.ScaleTo(1.1, 250, Easing.Linear);
+            await OldManIMG.ScaleTo(1, 250, Easing.Linear);
+            await OldManIMG.ScaleTo(1.1, 250, Easing.Linear);
 
             // Cancel any ongoing animation
             cancellationTokenSource?.Cancel();
